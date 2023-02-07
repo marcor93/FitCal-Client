@@ -3,5 +3,40 @@
 @use "../../styles/partials/variables" as *;
 
 .header {
-  background-color: cyan;
+  background-color: $primary-3;
+  &__container {
+    padding: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include desktop {
+      width: 102rem;
+      margin: auto;
+    }
+  }
+  &__title {
+    color: $primary-1;
+    width: 100%;
+    text-align: center;
+    padding: 1.6rem 0rem 0.8rem 0rem;
+    font-size: 4rem;
+    text-shadow: 1px 1px black;
+  }
+  &__right {
+    display: flex;
+    justify-content: center;
+    gap: 12rem;
+    padding: 0.8rem 0rem 0rem 0rem;
+    flex-grow: 1;
+    @include tablet {
+      justify-content: space-between;
+    }
+    &--date {
+      color: $black;
+    }
+    &--user {
+      color: $black;
+    }
+  }
 }

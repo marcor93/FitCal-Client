@@ -1,7 +1,24 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.footercontainer {
+  background-color: $primary-3;
+}
 
 .footer {
-  background-color: pink;
+  display: flex;
+  justify-content: space-around;
+  @include desktop {
+    width: 102rem;
+    margin: auto;
+    justify-content: space-between;
+  }
+  &__link {
+    margin: 2rem;
+  }
+  &__img {
+    height: 3rem;
+  }
 }
