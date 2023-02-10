@@ -1,11 +1,18 @@
 import "./Header.scss";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
+
+  const gohome = (e) => {
+    navigate("/activity");
+  };
   return (
     <section className="header">
       <div className="header__container">
-        <h1 className="header__title">FitCal</h1>
+        <h1 className="header__title" onClick={gohome}>
+          FitCal
+        </h1>
         <div className="header__right">
           <p className="header__right--date">
             {new Date(Date.now()).toLocaleDateString("en-US", {

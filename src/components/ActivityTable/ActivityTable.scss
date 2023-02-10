@@ -1,0 +1,31 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.acttablecontainer {
+  @include desktop {
+    width: 102rem;
+    margin: auto;
+  }
+}
+
+.loading {
+  padding: 1rem;
+}
+
+.acttable {
+  margin: 1rem;
+  &__header {
+    display: none;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      background-color: rgba($color: $primary-3, $alpha: 0.5);
+    }
+    &--text {
+      flex: 1 1 0px;
+      color: $black;
+    }
+  }
+}

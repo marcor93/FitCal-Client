@@ -1,17 +1,21 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Test from "./components/Test/Test";
-import NavBar from "./components/NavBar/NavBar";
+import Login from "./components/Login/Login";
+import Activity from "./pages/Activity/Activity";
+import Cardio from "./pages/Cardio/Cardio";
+import Workout from "./pages/Workout/Workout";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
-        <NavBar />
         <Routes>
-          <Route path="/test" element={<Test />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/activity" element={<Activity />} />
+          <Route path="/cardio" element={<Cardio />} />
+          <Route path="/workout" element={<Workout />} />
         </Routes>
         <Footer />
       </BrowserRouter>

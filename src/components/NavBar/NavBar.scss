@@ -1,3 +1,44 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.navbarcontainer {
+  @include desktop {
+    width: 102rem;
+    margin: auto;
+  }
+}
+
+.navbar {
+  display: flex;
+  &__link {
+    flex-grow: 1;
+    margin: 1rem;
+    border: 1px dashed $primary-3;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: $secondary-3;
+    }
+    &:link {
+      color: $black;
+    }
+    &:visited {
+      color: $black;
+    }
+  }
+  &__img {
+    width: 5rem;
+  }
+  &__text {
+    display: none;
+    @include tablet {
+      display: inline-block;
+      padding: 1rem 2rem;
+    }
+  }
+}

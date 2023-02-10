@@ -1,0 +1,17 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.actitem {
+  border-bottom: 1px solid rgba($color: $black, $alpha: 0.5);
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__column {
+    flex: 1 1 1px;
+    padding: 0.5rem;
+    @include tablet {
+    }
+  }
+}
