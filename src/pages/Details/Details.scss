@@ -1,0 +1,87 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.detailscontainer {
+  @include tablet {
+    width: 60rem;
+    margin: auto;
+  }
+  @include desktop {
+    width: 60rem;
+    margin: auto;
+  }
+}
+
+.details {
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba($color: $black, $alpha: 0.25);
+
+  &__header {
+    padding-bottom: 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba($color: $black, $alpha: 0.25);
+  }
+  &__item {
+    display: flex;
+    padding: 0.5rem 0.5rem;
+    &--title {
+      font-weight: bold;
+    }
+    &--value {
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem;
+  &__button {
+    flex-grow: 1;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem 0rem;
+    border: 1px solid rgba($color: $primary-2, $alpha: 1);
+    background-color: $primary-4;
+    font-size: 1.6rem;
+    font-weight: bold;
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+}
+
+.modal {
+  position: relative;
+  height: 20rem;
+  width: 85%;
+  background-color: $primary-4;
+  border: 1px solid $black;
+  border-radius: 4px;
+  text-align: center;
+  margin: auto;
+  top: 25%;
+  &__title {
+    padding: 4rem 0rem;
+  }
+}
+
+.deletecontainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  &__action {
+    width: 25%;
+    padding: 1rem;
+    font-weight: bold;
+    border: 1px solid rgba($color: $primary-2, $alpha: 1);
+    background-color: $primary-3;
+    border-radius: 4px;
+  }
+}

@@ -11,7 +11,16 @@
   &__column {
     flex: 1 1 1px;
     padding: 0.5rem;
-    @include tablet {
-    }
+  }
+  &:link {
+    text-decoration: none;
+    color: $black;
+  }
+  &:visited {
+    text-decoration: none;
+    color: $black;
+  }
+  &:hover {
+    background-color: rgba($color: $secondary-1, $alpha: 0.5);
   }
 }

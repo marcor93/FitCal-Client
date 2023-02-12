@@ -5,6 +5,7 @@ import Login from "./components/Login/Login";
 import Activity from "./pages/Activity/Activity";
 import Cardio from "./pages/Cardio/Cardio";
 import Workout from "./pages/Workout/Workout";
+import Details from "./pages/Details/Details";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/activity" element={<Activity />} />
+          <Route path="/activity/:activityId" element={<Details />} />
           <Route path="/cardio" element={<Cardio />} />
           <Route path="/workout" element={<Workout />} />
         </Routes>

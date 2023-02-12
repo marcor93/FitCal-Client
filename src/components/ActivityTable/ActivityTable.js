@@ -13,7 +13,9 @@ function ActivityTable() {
       try {
         const { data } = await axios.get(API);
         setData(data);
+        data.sort((a, b) => a.date - b.date);
         setIsLoading(false);
+        console.log(data);
       } catch {
         console.log("error");
       }
