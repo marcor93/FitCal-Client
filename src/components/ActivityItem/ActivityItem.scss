@@ -2,9 +2,23 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.actitem {
-  border-bottom: 1px solid rgba($color: $black, $alpha: 0.5);
+.act {
+  border: 1px solid rgba($color: $black, $alpha: 0.5);
+  border-radius: 4px;
+  margin: 1rem auto;
+  width: 85%;
+  text-align: center;
+  background-color: rgba($color: $secondary-1, $alpha: 0.5);
   @include tablet {
+    width: 100%;
+    text-align: left;
+    margin: 0.25rem;
+  }
+}
+
+.actitem {
+  @include tablet {
+    border-bottom: 1px solid rgba($color: $black, $alpha: 0.5);
     display: flex;
     justify-content: space-between;
   }
@@ -22,5 +36,13 @@
   }
   &:hover {
     background-color: rgba($color: $secondary-1, $alpha: 0.5);
+  }
+}
+
+.columndate {
+  text-decoration: underline;
+  color: $primary-1;
+  @include tablet {
+    text-decoration: none;
   }
 }

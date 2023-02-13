@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 function ActivityItem(props) {
   return (
-    <section>
+    <section className="act">
       <Link className="actitem" to={"/activity/" + props.id}>
-        <div className="actitem__column">
+        <div className="actitem__column columndate">
           {new Date(props.date * 1000).toLocaleDateString("en-US", {
             month: "long",
             day: "2-digit",
