@@ -11,7 +11,6 @@ function Details() {
   const { activityId } = useParams();
   const [isLoadingA, setLoadingA] = useState(true);
   const [isLoading2, setLoading2] = useState(true);
-  const [isupdated, setUpdate] = useState(false);
   const [oneActivity, setOne] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -67,21 +66,6 @@ function Details() {
     getOne();
   }, []);
 
-  // useEffect(() => {
-  //   const getOne = async () => {
-  //     try {
-  //       const { data } = await axios.get(API);
-  //       setOne(data);
-  //       setLoadingA(false);
-  //       console.log("fetching data");
-
-  //     } catch {
-  //       console.log("error");
-  //     }
-  //   };
-  //   getOne();
-  // }, [isupdated]);
-
   if (!isLoadingA && isLoading2) {
     setTod(oneActivity.timeofday);
     setRating(oneActivity.rating);
@@ -115,9 +99,7 @@ function Details() {
   function save() {
     saveEdit();
     setShowOne(true);
-    navigate("/activity");
-    setUpdate(false);
-    //set the state of dependencey to true
+    navigate("/activity/");
   }
 
   const saveEdit = async () => {

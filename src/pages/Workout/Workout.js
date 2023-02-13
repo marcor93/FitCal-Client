@@ -12,11 +12,11 @@ function Workout() {
   const [activitydate, handleDateChange] = useState(new Date());
   const [tod, setTod] = useState("");
   const [rating, setRating] = useState("");
-  const [exercise1, setExercise1] = useState("");
-  const [exercise2, setExercise2] = useState("");
-  const [exercise3, setExercise3] = useState("");
-  const [exercise4, setExercise4] = useState("");
-  const [exercise5, setExercise5] = useState("");
+  const [exercise1, setExercise1] = useState(null);
+  const [exercise2, setExercise2] = useState(null);
+  const [exercise3, setExercise3] = useState(null);
+  const [exercise4, setExercise4] = useState(null);
+  const [exercise5, setExercise5] = useState(null);
   const [addExer, moreExer] = useState(1);
 
   const handleTodChange = (e) => {
