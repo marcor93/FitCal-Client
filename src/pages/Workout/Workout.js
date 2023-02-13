@@ -49,6 +49,10 @@ function Workout() {
         rating: rating,
         exercise1: exercise1,
         exercise2: exercise2,
+        exercise3: exercise3,
+        exercise4: exercise4,
+        exercise5: exercise5,
+
         type: "Workout",
       });
     } catch {

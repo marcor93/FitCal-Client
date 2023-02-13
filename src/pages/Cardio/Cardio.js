@@ -14,6 +14,8 @@ function Cardio() {
   const [distance, setDistance] = useState("");
   const [rating, setRating] = useState("");
 
+  console.log(activitydate);
+
   const handleTodChange = (e) => {
     setTod(e.target.value);
   };
