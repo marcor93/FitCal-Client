@@ -47,3 +47,11 @@
     text-decoration: none;
   }
 }
+
+.oddMonth {
+  background-color: rgba($color: $secondary-2, $alpha: 0.1);
+}
+
+.evenMonth {
+  background-color: rgba($color: $secondary-2, $alpha: 0.3);
+}

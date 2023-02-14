@@ -30,7 +30,6 @@ function Login() {
 
   const togglesu = (e) => {
     setNewAcc(true);
-    console.log(newAcc);
   };
 
   return (

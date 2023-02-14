@@ -12,27 +12,11 @@ function Library() {
 
   const handleselectedEexerciseChange = (e) => {
     setSelectedExercise(e.target.value);
-    console.log(selectedEexercise);
   };
 
   const handleShowMore = () => {
     setShowMore(true);
-    console.log(showMore);
   };
-
-  //   const handleGo = async () => {
-  //     try {
-  //       const { APIData } = await axios.get(URL + selectedEexercise, {
-  //         headers: { "X-Api-Key": "EDPnK0XCT5v/q/eS+gkchg==0nDqaK71uaG7NFVJ" },
-  //       });
-  //       setLibData(APIData);
-  //       setLibLoading(false);
-  //       console.log(APIData.text);
-  //       console.log(libData);
-  //     } catch {
-  //       console.log("API Library Get Error");
-  //     }
-  //   };
 
   const handleGo = () => {
     axios
@@ -44,8 +28,6 @@ function Library() {
         setLibLoading(false);
       });
   };
-
-  console.log(libData);
 
   return (
     <section className="Librarycontainer">

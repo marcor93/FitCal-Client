@@ -5,7 +5,6 @@ function LibraryItem(props) {
   const [show, setShow] = useState(false);
 
   const clickItem = () => {
-    console.log("i was clicked");
     if (show) {
       setShow(false);
     } else {

@@ -58,7 +58,6 @@ function Details() {
         const { data } = await axios.get(API);
         setOne(data);
         setLoadingA(false);
-        console.log("fetching data");
       } catch {
         console.log("error");
       }
@@ -75,10 +74,17 @@ function Details() {
     setExercise3(oneActivity.exercise3);
     setExercise4(oneActivity.exercise4);
     setExercise5(oneActivity.exercise5);
-    // handleDateChange(oneActivity.date);
+    handleDateChange(
+      new Date(
+        new Date(oneActivity.date * 1000).toLocaleDateString("en-US", {
+          month: "2-digit",
+          day: "2-digit",
+          year: "numeric",
+        })
+      )
+    );
     setLoading2(false);
   }
-  // console.log(activitydate);
 
   const openModal = () => {
     setIsOpen(true);
@@ -106,6 +112,7 @@ function Details() {
     try {
       await axios.patch(`http://localhost:8080/activity/${activityId}`, {
         id: oneActivity.id,
+        date: Math.round(activitydate.getTime() / 1000),
         timeofday: tod,
         rating: rating,
         distance: distance,
