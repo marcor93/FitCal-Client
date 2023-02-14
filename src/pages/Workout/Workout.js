@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import axios from "axios";
+import Library from "../../components/Library/Library";
 
 function Workout() {
   const navigate = useNavigate();
@@ -87,13 +88,6 @@ function Workout() {
     }
     moreExer((prevCount) => prevCount + 1);
   };
-
-  // request.get({
-  //   url: 'https://api.api-ninjas.com/v1/exercises?muscle=' + muscle,
-  //   headers: {
-  //     'X-Api-Key': 'EDPnK0XCT5v/q/eS+gkchg==0nDqaK71uaG7NFVJ'
-  //   },
-  // https://api-ninjas.com/api/exercises
 
   return (
     <section className="workoutcontainer">
@@ -267,6 +261,7 @@ function Workout() {
           <button className="workoutform__button">Submit</button>
         </div>
       </form>
+      <Library />
     </section>
   );
 }

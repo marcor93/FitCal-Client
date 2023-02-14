@@ -223,7 +223,11 @@ function Details() {
           <h1 className="details__header">Edit Activity</h1>
 
           <div className="details__item">
-            <Calendar onChange={handleDateChange} value={activitydate} />
+            <Calendar
+              onChange={handleDateChange}
+              value={activitydate}
+              className="calendar"
+            />
           </div>
 
           <div className="details__item">
@@ -244,7 +248,7 @@ function Details() {
             </select>
           </div>
           <div className="details__item">
-            <p className="details__item--tile">Rating:</p>
+            <p className="details__item--title">Rating:</p>
             <select
               id="rating"
               name="rating"
@@ -265,7 +269,7 @@ function Details() {
               <input
                 type="distance"
                 placeholder="in KM"
-                className="details__item--input"
+                className="details__item--value"
                 value={distance}
                 onChange={handleDistanceChange}
               />
@@ -277,7 +281,7 @@ function Details() {
               <select
                 id="exercise1"
                 name="exercise1"
-                className="details__item--input"
+                className="details__item--value"
                 value={exercise1}
                 onChange={handleExercise1Change}
               >
@@ -301,7 +305,7 @@ function Details() {
               <select
                 id="exercise2"
                 name="exercise2"
-                className="details__item--input"
+                className="details__item--value"
                 value={exercise2}
                 onChange={handleExercise2Change}
               >
@@ -325,7 +329,7 @@ function Details() {
               <select
                 id="exercise3"
                 name="exercise3"
-                className="details__item--input"
+                className="details__item--value"
                 value={exercise3}
                 onChange={handleExercise3Change}
               >
@@ -349,7 +353,7 @@ function Details() {
               <select
                 id="exercise4"
                 name="exercise4"
-                className="details__item--input"
+                className="details__item--value"
                 value={exercise4}
                 onChange={handleExercise4Change}
               >
@@ -373,7 +377,7 @@ function Details() {
               <select
                 id="exercise5"
                 name="exercise5"
-                className="details__item--input"
+                className="details__item--value"
                 value={exercise5}
                 onChange={handleExercise5Change}
               >

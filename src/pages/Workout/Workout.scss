@@ -58,9 +58,15 @@
     background-color: $primary-4;
     font-size: 1.6rem;
     font-weight: bold;
+    text-align: center;
     @include tablet {
       //   margin: 1rem 1rem 3rem 1rem;
       font-size: 2rem;
+    }
+
+    &:hover {
+      background-color: rgba($color: $primary-3, $alpha: 1);
+      color: white;
     }
   }
   &__warning {

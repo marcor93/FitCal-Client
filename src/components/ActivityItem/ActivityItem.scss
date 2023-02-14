@@ -8,7 +8,7 @@
   margin: 1rem auto;
   width: 85%;
   text-align: center;
-  background-color: rgba($color: $secondary-1, $alpha: 0.5);
+  background-color: rgba($color: $secondary-1, $alpha: 0.1);
   @include tablet {
     width: 100%;
     text-align: left;
@@ -42,6 +42,7 @@
 .columndate {
   text-decoration: underline;
   color: $primary-1;
+  font-weight: bold;
   @include tablet {
     text-decoration: none;
   }
