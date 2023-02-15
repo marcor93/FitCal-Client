@@ -7,6 +7,10 @@ function Header() {
   const gohome = (e) => {
     navigate("/activity");
   };
+
+  const timenow = new Date().getTime();
+  console.log(timenow);
+
   return (
     <section className="header">
       <div className="header__container">

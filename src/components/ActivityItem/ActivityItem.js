@@ -30,8 +30,6 @@ function ActivityItem(props) {
     }
   }
 
-  console.log(altmonth);
-
   return (
     <section className={`act ${altmonth}`}>
       <Link className="actitem" to={"/activity/" + props.id}>

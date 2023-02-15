@@ -1,31 +1,60 @@
 import "./Login.scss";
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [newAcc, setNewAcc] = useState(false);
+  const [pass1, setpass1] = useState("");
+  const [pass2, setpass2] = useState("");
+  const navigate = useNavigate();
 
-  const handleSignin = (e) => {
-    // e.preventDefault();
-    // axios.post(loginUrl, {
-    //   username: e.target.username.value,
-    //   password: e.target.password.value
-    // })
-    //   .then((response) => {
-    //     sessionStorage.setItem('JWTtoken', response.data.token);
-    //     setIsLoggedIn(true);
-    //     setIsLoginError(false);
-    //     setErrorMessage("");
-    //   })
-    //   .catch((error) => {
-    //     setIsLoginError(true);
-    //     setErrorMessage(error.response.data.error.message);
-    //   });
+  const changepass1 = (e) => {
+    setpass1(e.target.value);
   };
 
+  const changepass2 = (e) => {
+    setpass2(e.target.value);
+  };
+
+  const SignupAPI = "http://localhost:8080/auth/signup";
+  const LoginAPI = "http://localhost:8080/auth/login";
+
   const handleSignup = (e) => {
-    alert(
-      "thank you for creating an account, please use your new details to sign in below"
-    );
+    e.preventDefault();
+    if (pass1 != pass2) {
+      alert("Passwords must match");
+      return;
+    }
+    axios
+      .post(SignupAPI, {
+        username: e.target.username.value,
+        password: e.target.password.value,
+      })
+      .then(() => {
+        setNewAcc(false);
+        alert("Thank you for creating an account!");
+      });
+  };
+
+  const handleSignin = (e) => {
+    e.preventDefault();
+    axios
+      .post(LoginAPI, {
+        username: e.target.username.value,
+        password: e.target.password.value,
+      })
+      .then((response) => {
+        sessionStorage.setItem("JWTtoken", response.data.token);
+        if (response.data === "Try Again!") {
+          alert("Please Try Again");
+          return;
+        }
+        navigate("/activity");
+      })
+      .catch((error) => {
+        alert(error);
+      });
   };
 
   const togglesu = (e) => {
@@ -52,6 +81,7 @@ function Login() {
                 className="signin__field--input"
                 type="password"
                 name="password"
+                autoComplete="enter your password"
               />
             </div>
             <button className="signin__btn" type="submit">
@@ -81,16 +111,20 @@ function Login() {
                 <p className="signin__field--text">Password:</p>
                 <input
                   className="signin__field--input"
-                  type="text"
-                  name="username"
+                  type="password"
+                  name="password"
+                  autoComplete="passwords must match"
+                  onChange={changepass1}
                 />
               </div>
               <div className="signin__field">
                 <p className="signin__field--text">Confirm Password:</p>
                 <input
                   className="signin__field--input"
-                  type="text"
-                  name="username"
+                  type="password"
+                  name="password2"
+                  autoComplete="passwords must match"
+                  onChange={changepass2}
                 />
               </div>
               <button className="signin__btn" type="submit">
