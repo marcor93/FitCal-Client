@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+client dependencies:
+sass, axios, react-router-dom, react-calendar,
+Git Client: https://github.com/marcor93/FitCal-Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+server dependencies:
+express, knex, cors, jwt, sql
+Git Server: https://github.com/marcor93/FitCal-Server
 
-## Available Scripts
+database variables:
+schema: fitcal
+table: activity
 
-In the project directory, you can run:
+3rd party API: https://api-ninjas.com/api/exercises
 
-### `npm start`
+Fitcall is a cross-discipline activity tracking application build utilizing a React Client, Express Server, 3rd party API, and SQL Database.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To get started:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Download the Client and Server files from git
+2. Install all node dependencies
+3. Create a new schema in SQL called 'fitcal'
+4. Create a table in your database called 'activity' by running 'knex migrate:latest'
+   OPTIONAL: to seed data for demo purposes, run 'knex seed:run'
+5. Sign up for a free API-Ninja's account and register to receive your own API Key. You will need to add this key to your clients .env file as per the example below:
 
-### `npm test`
+REACT_APP_API_Key = "FIPnK0XCT3v/q/eS+gkchg==0nDqaK71uaG7NLIJ" <- not a real key
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Or you can hard code in your api code on line 24 of Library.js
 
-### `npm run build`
+How to use the app:
+This app currently uses simple server side verification at the login page, matching passwords is the only constraint when making an account. (To bypass the login should issues occur during demo, you can also click the logo in the header to redirect to the activity page. This bypass can be turned off with state when going live.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once in the app, a user click either the cardio or workout buttons at the top of the page to submit a new event. The forms utilize a point and click calendar, drop down menus, and text fields to guide users through the forms.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For workouts, a user can enter up to 5 exercises by clicking the more button, but these fields are NOT mandatory should the user not wish to submit this extra data.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Should a user not know what exercises fall into which category, they can access the exercise library at the bottom of the page by selecting a muscle group and clicking go. Once data is returned each exercise name can be clicked to toggle more information about the specific exercise.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Once back on the main activity page, each activity can be clicked on to see more information about the specific event, as well as edit all fields or delete it all together.

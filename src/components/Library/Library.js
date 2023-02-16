@@ -21,7 +21,7 @@ function Library() {
   const handleGo = () => {
     axios
       .get(URL + selectedEexercise, {
-        headers: { "X-Api-Key": "EDPnK0XCT5v/q/eS+gkchg==0nDqaK71uaG7NFVJ" },
+        headers: { "X-Api-Key": process.env.REACT_APP_API_Key },
       })
       .then(function (response) {
         setLibData(response.data);
